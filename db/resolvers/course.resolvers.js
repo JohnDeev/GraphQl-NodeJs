@@ -13,9 +13,9 @@ module.exports = {
     },
   },
   Mutation: {
-    async addCourse( { input }) {
-      const course = new Course({ input });
-      await course.save();
+    async addCourse(obj, { input }) {
+      const course = new Course(input);
+     await Course.save();
       return course;
     },
 

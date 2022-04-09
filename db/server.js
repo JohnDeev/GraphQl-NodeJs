@@ -11,7 +11,7 @@ const {merge } = require('lodash');
 const courseTypeDefs = require("./typesD/course.types");
 const courseResolvers = require("./resolvers/course.resolvers");
 
-mongoose.connect("mongodb://localhost/graphql_db_course", { useNewUrlParser: true }); //ODM object data model
+mongoose.connect("mongodb://localhost/graphql_db_course", { useNewUrlParser: true, useUnifiedTopology: true }); //ODM object data model
 
 const app = express();
 const port = 8080;
@@ -48,5 +48,5 @@ app.use("/graphql", bodyParser.json(), graphqlExpress({ schema: schema }));
 app.use("/graphiql", graphiqlExpress({ endpointURL: "/graphql" }));
 
 app.listen(port, () => {
-  console.log(`Servidor iniciado en el puerto ${port}`);
+  console.log(`Servidor iniciado  http://localhost:${port}/graphiql`);
 });

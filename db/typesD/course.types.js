@@ -6,6 +6,7 @@ type Course{
 }
 
 
+
 input CourseInput {
   title: String!
   views: Int
